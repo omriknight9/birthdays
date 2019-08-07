@@ -1,0 +1,53 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Birthdays</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 , user-scalable = no">
+	<link href="css/main.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="./images/birthdayCake.png" sizes="32x32" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+	
+</head>
+
+<body>
+
+    <div class="balloonsWrapper">
+        <img src="./images/birthdayCake.png" alt="" class="birthdayCake" />
+    </div>
+
+    <div class="inputsContainer">
+
+        <div class="nameWrapper">
+            <label for="nameInput">
+                Name
+            </label>
+            <input name="nameInput" id="nameInput" type="text" value="" onclick="BackColor($(this))" />
+        </div>
+
+        <div class="dayWrapper">
+            <label for="dayInput">
+                Day
+            </label>
+            <input name="dayInput" id="dayInput" type="number" value="" onclick="BackColor($(this))" />
+        </div>
+
+        <div class="monthWrapper">
+            <label for="monthInput">
+                Month
+            </label>
+            <input name="monthInput" id="monthInput" type="number" value="" onclick="BackColor($(this))" />
+        </div>
+
+        <button onclick="birthdays($('#nameInput').val(), $('#dayInput').val(), $('#monthInput').val())" id="submitBtn">Submit</button>
+        <button onclick="clearContainer()" id="clearBtn">Clear</button>
+
+    </div>
+
+    <div class="container"></div>
+
+</body>
+</html>

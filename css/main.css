@@ -1,0 +1,259 @@
+/*h1 {
+    text-align: center;
+    margin-top: 12rem;
+    z-index: 2;
+}*/
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.birthdayWrapper {
+    /*width: 12rem;*/
+    width: 67%;
+    text-align: center;
+}
+
+.birthdayWrapper:first-child {
+    margin-top: 31rem;
+}
+
+.birthdayWrapper:not(first-child) {
+    margin-top: 3rem;
+}
+
+.dateWrapper {
+    width: 99%;
+    display: flex;
+    height: 2rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.dateWrapper p {
+    width: 40%;
+}
+
+.dateWrapper:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.dateWrapper:nth-child(even) {
+    background-color: #FFA93E;
+}
+
+label {
+    display: block;
+    margin-bottom: .7rem;
+}
+
+.inputsContainer {
+    position: absolute;
+    width: 99%;
+    margin: 6rem auto 0 auto;
+    z-index: 2;
+    /*text-align: center;*/
+}
+
+input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    height: 1.7rem;
+    text-indent: 1rem;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 1rem auto;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+#submitBtn {
+    background-color: #FFA93E;
+}
+
+#clearBtn {
+    display: none;
+    /*background-color: #2086F7;*/
+    background-color: #FF7272;
+}
+
+.nameWrapper, .dayWrapper, .monthWrapper {
+    position: relative;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 1rem;
+
+}
+
+.balloonsWrapper {
+    position: absolute;
+    top: 0;
+    width: 99%;
+    text-align: center;
+    z-index: 1;
+
+}
+
+/*.balloonsImg {
+   width: 40rem;
+   height: 40rem;
+}*/
+
+.birthdayHeader {
+    position: absolute;
+    left: 4%;
+    width: 350px;
+    height: 250px;
+}
+
+.birthdayCake {
+    position: absolute;
+    right: 4%;
+    width: 250px;
+    height: 250px;
+}
+
+.left {
+    float: left;
+    width: 40%;
+}
+
+.right {
+    float: right;
+    width: 40%;
+}
+
+.inputPlaceholder {
+    /*display: none;*/
+    width: 20%;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    height: 1rem;
+    background-color: white;
+    /*transition: 5s;*/
+    
+}
+
+.animation {
+    animation: placeholderAnim .3s forwards;
+}
+
+.animationReverse {
+    animation: placeholderAnimReverse .3s forwards;
+}
+
+@keyframes placeholderAnim {
+    0% {
+        display: block;
+        top: -10px;
+        opacity: 0;
+    }
+
+    100% {
+        top: -24px;
+        opacity: 1;
+    }
+}
+
+@keyframes placeholderAnimReverse {
+    0% {
+        top: -24px;
+        opacity: 1;
+    }
+
+    100% {
+        top: -10px;
+        /*opacity: 0;*/
+        /*display: none;*/
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .balloonsWrapper {
+        width: 97%;
+        background: url("../images/balloons.png") no-repeat center top;
+        background-size: contain;
+        height: 40rem;
+    }
+
+    .inputsContainer {
+        width: 97%;
+        margin: 10rem auto 0 auto;
+    }
+
+    .nameWrapper, .dayWrapper, .monthWrapper {
+        width: 13rem;
+
+    }
+
+    .birthdayHeader, .birthdayCake {
+        display: none;
+    }
+
+    .birthdayWrapper:first-child {
+        width: 100%;
+        margin-top: 40rem;
+    }
+
+    .birthdayWrapper:not(first-child) {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .left {
+        width: 45%;
+    }
+
+    .right {
+        width: 45%;
+    }
+
+    .birthdayWrapper:first-child {
+        width: 100%;
+        margin-top: 32rem;
+    }
+
+    .dateWrapper p {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 370px) {
+
+    .nameWrapper, .dayWrapper, .monthWrapper {
+        width: 11rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .dayP {
+        font-size: .87rem;
+    }
+}
