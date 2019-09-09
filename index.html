@@ -33,14 +33,27 @@
             <label for="dayInput">
                 Day
             </label>
-            <input name="dayInput" id="dayInput" type="number" value="" onclick="BackColor($(this))" />
+            <select name="dayInput" id="dayInput" value="" onclick="BackColor($(this))"></select>
         </div>
 
         <div class="monthWrapper">
             <label for="monthInput">
                 Month
             </label>
-            <input name="monthInput" id="monthInput" type="number" value="" onclick="BackColor($(this))" />
+            <select name="monthInput" id="monthInput" value="" onclick="BackColor($(this))">
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
         </div>
 
         <button onclick="birthdays($('#nameInput').val(), $('#dayInput').val(), $('#monthInput').val())" id="submitBtn">Submit</button>
