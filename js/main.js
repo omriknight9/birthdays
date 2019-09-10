@@ -4,6 +4,12 @@ var d = new Date();
 var currentYear = d.getFullYear();
 
 $(document).ready(function (event) {
+
+    setTimeout(function () {
+        $('#dayInput').val(0);
+        $('#monthInput').val(0);
+    }, 0)
+
     for (var i = 1; i < 32; i++) {
         var option = $('<option>', {
             value: i,
@@ -17,9 +23,6 @@ function birthdays(name, day, month) {
     var nameInputVal = $('#nameInput').val();
     var dayInputVal = $('#dayInput').val();
     var monthInputVal = $('#monthInput').val();
-
-    console.log('dayInputVal: ' + dayInputVal);
-    console.log('monthInputVal: ' + monthInputVal);
 
     if (nameInputVal == '' || nameInputVal == undefined) {
         $('#nameInput').css({
