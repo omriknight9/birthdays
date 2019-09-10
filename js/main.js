@@ -27,6 +27,14 @@ $(document).ready(function (event) {
         setTimeout(function () {
             $('#submitBtn').click();
         }, 200)
+
+        setTimeout(function () {
+            window.history.pushState('page2', 'Title', '?');
+            window.addEventListener('popstate', function (event) {
+                window.location.href("");
+                history.pushState(null, null, window.location.pathname);
+            });
+        }, 500)
     }
 
     setTimeout(function () {
