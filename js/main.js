@@ -2,8 +2,32 @@
 var valid;
 var d = new Date();
 var currentYear = d.getFullYear();
+var name;
+var day;
+var month;
 
 $(document).ready(function (event) {
+
+    if (window.location.href.indexOf("name") > -1) {
+        name = window.location.href.split('name=')[1].split('&')[0];
+    }
+
+    if (window.location.href.indexOf("day") > -1) {
+        day = window.location.href.split('day=')[1].split('&')[0];
+    }
+
+    if (window.location.href.indexOf("month") > -1) {
+        month = window.location.href.split('month=')[1].split('&')[0];
+        setTimeout(function () {
+            $('#nameInput').val(name);
+            $('#dayInput').val(day);
+            $('#monthInput').val(month);
+        }, 100)
+
+        setTimeout(function () {
+            $('#submitBtn').click();
+        }, 200)
+    }
 
     setTimeout(function () {
         $('#dayInput').val(0);
