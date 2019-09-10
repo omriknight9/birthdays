@@ -16,6 +16,13 @@ $(document).ready(function (event) {
             text: i
         }).appendTo($('#dayInput'))
     }
+
+    for (var i = 1; i < 13; i++) {
+        var option = $('<option>', {
+            value: i,
+            text: i
+        }).appendTo($('#monthInput'))
+    }
 })
 
 function birthdays(name, day, month) {
@@ -93,7 +100,7 @@ function birthdays(name, day, month) {
                 buildBirthdays(rightSide, date3, year, days);
             }
 
-            $('html, body').animate({ scrollTop: $('.birthdayWrapper:last-child').position().top }, 'slow'); 
+            $('html, body').animate({ scrollTop: $('.birthdayWrapper:last-child').position().top + 200}, 'slow'); 
         } else {
             $('#monthInput').css({
                 'border': '1px solid #FF4545'
