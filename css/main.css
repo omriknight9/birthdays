@@ -59,6 +59,13 @@ html, body {
     height: 2rem;
 }
 
+.downArrowSelect {
+    width: 15px;
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+}
+
 #daySelect, #monthSelect {
     position: absolute;
     top: .5rem;
