@@ -21,7 +21,6 @@
     </div>
 
     <div class="inputsContainer">
-
         <div class="nameWrapper">
             <label for="nameInput">
                 Name
@@ -33,17 +32,31 @@
             <label for="dayInput">
                 Day
             </label>
-            <select name="dayInput" id="dayInput" value="" onclick="BackColor($(this))"></select>
+            <div class="dropdown dayDrop" onclick="BackColor($(this))">
+                <div class="select">
+                    <img src="./Slices/downarrow_input.png" id="downArrowSimSelect" alt="" />
+                    <p id="daySelect" value="">Choose Day</p>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu"></ul>
+            </div>
         </div>
 
         <div class="monthWrapper">
             <label for="monthInput">
                 Month
             </label>
-            <select name="monthInput" id="monthInput" value="" onclick="BackColor($(this))"></select>
+            <div class="dropdown monthDrop" onclick="BackColor($(this))">
+                <div class="select">
+                    <img src="./Slices/downarrow_input.png" id="downArrowSimSelect" alt="" />
+                    <p id="monthSelect" value="">Choose Month</p>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu"></ul>
+            </div>
         </div>
 
-        <button onclick="birthdays($('#nameInput').val(), $('#dayInput').val(), $('#monthInput').val())" id="submitBtn">Submit</button>
+        <button onclick="birthdays($('#nameInput').val(), $('#daySelect').attr('value'), $('#monthSelect').attr('value'))" id="submitBtn">Submit</button>
         <button onclick="clearContainer()" id="clearBtn">Clear</button>
 
     </div>
