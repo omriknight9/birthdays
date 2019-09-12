@@ -8,6 +8,8 @@ var month;
 
 $(document).ready(function (event) {
 
+    $('body').addClass('gradient');
+
     if (window.location.href.indexOf("name") > -1) {
         name = window.location.href.split('name=')[1].split('&')[0];
     }
@@ -58,6 +60,7 @@ $(document).ready(function (event) {
 })
 
 function birthdays(name, day, month) {
+
     valid = true;
     var nameInputVal = $('#nameInput').val();
     var dayInputVal = $('#dayInput').val();
