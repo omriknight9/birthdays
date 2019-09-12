@@ -40,31 +40,72 @@ $(document).ready(function (event) {
     }
 
     setTimeout(function () {
-        $('#dayInput').val(0);
-        $('#monthInput').val(0);
+        $('#daySelect').val(0);
+        $('#monthSelect').val(0);
+        startDropdown($('#daySelect'), $('.dayDrop'));
+        startDropdown($('#monthSelect'), $('.monthDrop'));
     }, 0)
 
     for (var i = 1; i < 32; i++) {
         var option = $('<option>', {
             value: i,
             text: i
-        }).appendTo($('#dayInput'))
+        }).appendTo($('#dayInput'));
+
+        var daydropLi = $('<li>', {
+            value: i,
+            text: i
+        }).appendTo($('.dayDrop .dropdown-menu'));
     }
 
     for (var i = 1; i < 13; i++) {
         var option = $('<option>', {
             value: i,
             text: i
-        }).appendTo($('#monthInput'))
+        }).appendTo($('#monthInput'));
+
+        var monthDropLi = $('<li>', {
+            value: i,
+            text: i
+        }).appendTo($('.monthDrop .dropdown-menu'));
     }
 })
+
+
+function startDropdown(selectMenu, dropdown) {
+
+    dropdown.click(function () {
+        $(this).attr('tabindex', 1).focus();
+        $(this).toggleClass('active');
+        $(this).find('.dropdown-menu').slideToggle(300);
+    });
+
+    dropdown.focusout(function () {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').slideUp(300);
+    });
+
+    $('.dropdown .dropdown-menu li').click(function () {
+
+        var temp = $(this).parents('.dropdown').find('p');
+
+        $('.dropdown .dropdown-menu li').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.dropdown').find('p').text($(this).text());
+        $(this).parents('.dropdown').find(selectMenu).attr('value', $(this).val());
+
+    });
+}
+
 
 function birthdays(name, day, month) {
 
     valid = true;
+
     var nameInputVal = $('#nameInput').val();
-    var dayInputVal = $('#dayInput').val();
-    var monthInputVal = $('#monthInput').val();
+    var dayInputVal = $('#daySelect').attr('value');
+    var monthInputVal = $('#monthSelect').attr('value');
 
     if (nameInputVal == '' || nameInputVal == undefined) {
         $('#nameInput').css({
@@ -78,23 +119,23 @@ function birthdays(name, day, month) {
     }
     
     if (dayInputVal == '' || dayInputVal == undefined || dayInputVal > 31 || dayInputVal.length > 2) {
-        $('#dayInput').css({
+        $('.dayDrop').css({
             'border': '1px solid #FF4545'
         });
         valid = false;
     } else {
-        $('#dayInput').css({
+        $('.dayDrop').css({
             'border': '1px solid #aebed4'
         });
     }
 
     if (monthInputVal == '' || monthInputVal == undefined || monthInputVal > 12 || monthInputVal.length > 2) {
-        $('#monthInput').css({
+        $('.monthDrop').css({
             'border': '1px solid #FF4545'
         });
         valid = false;
     } else {
-        $('#monthInput').css({
+        $('.monthDrop').css({
             'border': '1px solid #aebed4'
         });
     }
@@ -137,10 +178,10 @@ function birthdays(name, day, month) {
 
             $('html, body').animate({ scrollTop: $('.birthdayWrapper:last-child').position().top + 200}, 'slow'); 
         } else {
-            $('#monthInput').css({
+            $('.monthDrop').css({
                 'border': '1px solid #FF4545'
             });
-            $('#dayInput').css({
+            $('.dayDrop').css({
                 'border': '1px solid #FF4545'
             });
         }
@@ -163,8 +204,10 @@ function buildBirthdays(side, date, year, days) {
     }).appendTo(dateWrapper)
 
     $('#nameInput').val('');
-    $('#dayInput').val('');
-    $('#monthInput').val('');
+    $('#daySelect').attr('value', '');
+    $('#monthSelect').attr('value', '');
+    $('#daySelect').html('Choose Day');
+    $('#monthSelect').html('Choose Month');
     $('#clearBtn').css('display', 'block');
 }
 
