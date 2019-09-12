@@ -22,8 +22,8 @@ $(document).ready(function (event) {
         month = window.location.href.split('month=')[1].split('&')[0];
         setTimeout(function () {
             $('#nameInput').val(name);
-            $('#dayInput').val(day);
-            $('#monthInput').val(month);
+            $('#daySelect').attr('value', day);
+            $('#monthSelect').attr('value', month);
         }, 100)
 
         setTimeout(function () {
