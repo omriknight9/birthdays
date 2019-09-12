@@ -16,6 +16,8 @@ $(document).ready(function (event) {
 
     if (window.location.href.indexOf("day") > -1) {
         day = window.location.href.split('day=')[1].split('&')[0];
+    } else {
+        console.log('asd');
     }
 
     if (window.location.href.indexOf("month") > -1) {
