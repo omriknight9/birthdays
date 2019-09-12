@@ -10,17 +10,15 @@ $(document).ready(function (event) {
 
     $('body').addClass('gradient');
 
-    if (window.location.href.indexOf("name") > -1) {
+    if (window.location.href.indexOf("name=") > -1) {
         name = window.location.href.split('name=')[1].split('&')[0];
     }
 
-    if (window.location.href.indexOf("day") > -1) {
+    if (window.location.href.indexOf("day=") > -1) {
         day = window.location.href.split('day=')[1].split('&')[0];
-    } else {
-        console.log('asd');
     }
 
-    if (window.location.href.indexOf("month") > -1) {
+    if (window.location.href.indexOf("month=") > -1) {
         month = window.location.href.split('month=')[1].split('&')[0];
         setTimeout(function () {
             $('#nameInput').val(name);
