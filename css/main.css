@@ -1,6 +1,6 @@
 
 html, body {
-    margin: 0;
+    /*margin: 0;*/
     min-height: 100%;
 }
 
@@ -127,7 +127,7 @@ label {
 
 .inputsContainer {
     position: absolute;
-    width: 99%;
+    width: 97%;
     margin: 6rem auto 0 auto;
     z-index: 2;
 }
@@ -185,7 +185,7 @@ button {
 .balloonsWrapper {
     position: absolute;
     top: 0;
-    width: 99%;
+    width: 97%;
     text-align: center;
     z-index: 1;
 }
@@ -216,14 +216,14 @@ button {
 
 @media only screen and (max-width: 765px) {
     .balloonsWrapper {
-        width: 100%;
+        /*width: 100%;*/
         background: url("../images/balloons.png") no-repeat center top;
         background-size: contain;
         height: 40rem;
     }
 
     .inputsContainer {
-        width: 100%;
+        /*width: 100%;*/
         margin: 10rem auto 0 auto;
     }
 
