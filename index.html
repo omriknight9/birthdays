@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,20 +21,23 @@
 
     <div class="inputsContainer">
         <div class="nameWrapper">
-            <label for="nameInput">
+            <label for="nameInput" class="floatLbl">
                 Name
             </label>
-            <input name="nameInput" id="nameInput" type="text" value="" onclick="BackColor($(this))" />
+            <input name="nameInput" id="nameInput" class="floatInput" type="text" value="" onclick="BackColor($(this))" />
         </div>
 
         <div class="dayWrapper">
-            <label for="dayInput">
+            <!-- <label for="dayInput" class="floatLbl">
                 Day
-            </label>
-            <div class="dropdown dayDrop" onclick="BackColor($(this))">
+            </label> -->
+            <div class="dropdown dayDrop floatInputUl" onclick="BackColor($(this))">
+                <label for="dayInput" class="floatLblUl" id="daySelectLbl">
+                    Day
+                </label>
                 <div class="select">
                     <img src="./images/downArrow.png" class="downArrowSelect" alt="" />
-                    <p id="daySelect" value="">Choose Day</p>
+                    <!-- <p id="daySelect" value="">Choose Day</p> -->
                 </div>
                 <input type="hidden" name="gender">
                 <ul class="dropdown-menu"></ul>
@@ -43,20 +45,24 @@
         </div>
 
         <div class="monthWrapper">
-            <label for="monthInput">
+            <!-- <label for="monthInput" class="floatLbl">
                 Month
-            </label>
-            <div class="dropdown monthDrop" onclick="BackColor($(this))">
+            </label> -->
+            <div class="dropdown monthDrop floatInputUl" onclick="BackColor($(this))">
+                <label for="monthInput" class="floatLblUl" id="monthSelectLbl">
+                    Month
+                </label>
                 <div class="select">
                     <img src="./images/downArrow.png" class="downArrowSelect" alt="" />
-                    <p id="monthSelect" value="">Choose Month</p>
+                    <!-- <p id="monthSelect" value="">Choose Month</p> -->
                 </div>
                 <input type="hidden" name="gender">
                 <ul class="dropdown-menu"></ul>
             </div>
         </div>
 
-        <button onclick="birthdays($('#nameInput').val(), $('#daySelect').attr('value'), $('#monthSelect').attr('value'))" id="submitBtn">Submit</button>
+        <!-- <button onclick="birthdays($('#nameInput').val(), $('#daySelect').attr('value'), $('#monthSelect').attr('value'))" id="submitBtn">Submit</button> -->
+        <button onclick="birthdays($('#nameInput').val(), $('#daySelectLbl').attr('value'), $('#monthSelectLbl').attr('value'))" id="submitBtn">Submit</button>
         <button onclick="clearContainer()" id="clearBtn">Clear</button>
 
     </div>
