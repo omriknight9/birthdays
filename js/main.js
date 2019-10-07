@@ -147,7 +147,6 @@ function startDropdown(selectMenu, dropdown) {
         }
 
         if ($(this).parents('.dropdown').find('label').attr('id') == 'monthSelectLbl') {
-            console.log($(this).parents('.dropdown').find('label'));
             $('.monthDrop').off('focus');
             $('#monthSelectLbl').css({ 'transform': 'translateY(9px)', 'text-indent': '1rem', 'color': 'gray' });
         }
