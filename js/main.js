@@ -8,7 +8,7 @@ var month;
 
 $(document).ready(function (event) {
 
-    focus();
+    inputFocus();
 
     $('body').addClass('gradient');
 
@@ -75,9 +75,8 @@ $(document).ready(function (event) {
     }
 })
 
-function focus() {
+function inputFocus() {
     $('.floatInput').focus(function () {
-
         $.each($('.floatInput'), function (key, value) {
             if ($(value).val() == '') {
                 $(value).parent().find('label').css({ 'transform': 'translateY(35px)', 'text-indent': '1rem', 'color': 'gray' });
@@ -264,7 +263,9 @@ function buildBirthdays(side, date, year, days) {
     $('#daySelectLbl').html('Day');
     $('#monthSelectLbl').html('Month');
     $('#clearBtn').css('display', 'block');
-    focus();
+    $('#nameInput').parent().find('label').css({ 'transform': 'translateY(35px)', 'text-indent': '1rem', 'color': 'gray' });
+    inputFocus();
+    
 }
 
 function clearContainer() {
