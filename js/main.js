@@ -160,7 +160,6 @@ function birthdays(name, day, month) {
     var dayInputVal = $('#daySelectLbl').attr('value');
     var monthInputVal = $('#monthSelectLbl').attr('value');
 
-
     if (nameInputVal == '' || nameInputVal == undefined) {
         $('#nameInput').css({
             'border': '1px solid #FF4545'
@@ -200,6 +199,8 @@ function birthdays(name, day, month) {
         month = month - 1;
         var year = currentYear
         var date = new Date(year, month, day);
+        let newDate = new Date();
+
         if (day == date.getDate()) {
 
             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -220,12 +221,20 @@ function birthdays(name, day, month) {
                 class: 'right',
             }).appendTo(birthdayWrapper);
 
-            for (var year = currentYear; year <= currentYear + 15; year++) {
+            let finalYear;
+
+            if (newDate > date) {
+                finalYear = currentYear + 1;
+            } else {
+                finalYear = currentYear;
+            }
+
+            for (var year = finalYear; year <= finalYear + 15; year++) {
                 var date2 = new Date(year, month, day);
                 buildBirthdays(leftSide, date2, year, days);
             }
 
-            for (var year = currentYear + 16; year <= currentYear + 31; year++) {
+            for (var year = finalYear + 16; year <= finalYear + 31; year++) {
                 var date3 = new Date(year, month, day);
                 buildBirthdays(rightSide, date3, year, days);
             }
